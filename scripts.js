@@ -13,3 +13,8 @@ const textos = [
     "Você pode digitar isso aqui.",
 ];
 
+function novoTexto() {
+    const index = Math.floor(Math.random() * textos.length)
+    texto.textContent = textos[index]
+}
+novoTexto()
