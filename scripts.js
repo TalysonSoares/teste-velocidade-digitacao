@@ -17,4 +17,20 @@ function novoTexto() {
     const index = Math.floor(Math.random() * textos.length)
     texto.textContent = textos[index]
 }
+
+function atualizarTeste() {
+    iniciar()
+}
+
+function iniciar() {
+    const statusDoTeste = JSON.parse(localStorage.getItem("testeEmAndamento"))
+
+    if(!statusDoTeste) {
+        localStorage.setItem("tempoInicial", new Date().getTime());
+        localStorage.setItem("testeEmAndamento", true);
+    }
+}
+
+entrada.addEventListener("keyup", atualizarTeste);
+
 novoTexto()
