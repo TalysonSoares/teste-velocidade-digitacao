@@ -58,6 +58,24 @@ function adicionarAoHistorico(textoDigitado, tempoGasto) {
     historico.appendChild(itemHistorico);
 }
 
+function reiniciarTeste() {
+    entrada.value = ""
+    resultado.textContent = ""
+    novoTexto();
+    localStorage.setItem("testeEmAndamento", false);
+    historico.innerHTML = "" 
+}
+
+function alternarTema() {
+    const body = document.body;
+
+    body.classList.toggle("claro");
+    body.classList.toggle("escuro")
+}
+
+
 entrada.addEventListener("keyup", atualizarTeste);
+reiniciar.addEventListener("click", reiniciarTeste);
+alternarTemaBtn.addEventListener("click", alternarTema);
 
 novoTexto()
